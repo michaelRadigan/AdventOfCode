@@ -1,4 +1,3 @@
-import os
 import collections
 from aocd.models import Puzzle
 
