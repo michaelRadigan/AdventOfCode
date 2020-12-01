@@ -1,7 +1,6 @@
 import os
 import collections
 from aocd.models import Puzzle
-puzzle = Puzzle(year=2020, day=1)
 
 
 def solve_a(entries, target):
