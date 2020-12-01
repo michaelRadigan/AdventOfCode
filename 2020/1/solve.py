@@ -1,5 +1,7 @@
 import os
 import collections
+from aocd.models import Puzzle
+puzzle = Puzzle(year=2020, day=1)
 
 
 def solve_a(entries, target):
@@ -22,7 +24,12 @@ def solve_b(entries):
 
 
 if __name__ == "__main__":
-    with open("2020/1/input.txt", "r") as f:
-        entries = [int(x) for x in f.read().split()]
+    puzzle = Puzzle(year=2020, day=1)
+    entries = [int(x) for x in puzzle.input_data.split()]
+    a_answer = solve_a(entries, 2020)
     print(f"Part A: {solve_a(entries, 2020)}")
+    puzzle.answer_a = a_answer
+
+    b_answer = solve_b(entries)
     print(f"Part B: {solve_b(entries)}")
+    puzzle.answer_b = b_answer
