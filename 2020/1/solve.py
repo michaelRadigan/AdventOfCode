@@ -24,10 +24,10 @@ def solve_b(entries):
 if __name__ == "__main__":
     puzzle = Puzzle(year=2020, day=1)
     entries = [int(x) for x in puzzle.input_data.split()]
-    a_answer = solve_a(entries, 2020)
-    print(f"Part A: {solve_a(entries, 2020)}")
-    puzzle.answer_a = a_answer
+    solution_a = solve_a(entries, 2020)
+    print(f"Part A: {solution_a}")
+    puzzle.answer_a = solution_a
 
     b_answer = solve_b(entries)
-    print(f"Part B: {solve_b(entries)}")
-    puzzle.answer_b = b_answer
+    print(f"Part B: {solution_a}")
+    puzzle.answer_b = solution_a
