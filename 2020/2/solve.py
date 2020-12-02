@@ -8,29 +8,45 @@ def parse_line(line):
     return int(min_target), int(max_target), target[0], password
 
 
-def is_valid(parsed_line):
-    min_target, max_target, target, password = parsed_line
+def parse(input):
+    return map(parse_line, input.split('\n'))
+
+
+def is_valid_a(password_info):
+    min_target, max_target, target, password = password_info
     return min_target <= password.count(target) <= max_target
 
 
-def solve_a(input):
+def solve_a(password_infos):
     count = 0
-    parsed_lines = map(parse_line, input.split('\n'))
-    for _ in filter(is_valid, parsed_lines):
+    for _ in filter(is_valid_a, password_infos):
         count += 1
     return count
 
 
-def solve_b():
-    pass
+def is_valid_b(password_info):
+    i, j, target, password = password_info
+
+    def is_match(index, target, password):
+
+        return password[index - 1] == target
+    return is_match(i, target, password) != is_match(j, target, password)
+
+
+def solve_b(password_infos):
+    count = 0
+    for _ in filter(is_valid_b, password_infos):
+        count += 1
+    return count
 
 
 if __name__ == "__main__":
     puzzle = Puzzle(year=2020, day=2)
-    solution_a = solve_a(puzzle.input_data)
+    password_infos = list(parse(puzzle.input_data))
+    solution_a = solve_a(password_infos)
     print(f"Part A: {solution_a}")
     puzzle.answer_a = solution_a
 
-    #b_answer = solve_b(entries)
-    #print(f"Part B: {solve_b(entries)}")
-    #puzzle.answer_b = b_answer
+    solution_b = solve_b(password_infos)
+    print(f"Part B: {solution_b}")
+    puzzle.answer_b = solution_b
