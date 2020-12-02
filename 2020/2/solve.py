@@ -4,8 +4,8 @@ from aocd.models import Puzzle
 
 def parse_line(line):
     nums, target, password = line.split(' ')
-    min_target, max_target = nums.split('-')
-    return int(min_target), int(max_target), target[0], password
+    i, j = nums.split('-')
+    return int(i), int(j), target[0], password
 
 
 def parse(input):
@@ -18,26 +18,19 @@ def is_valid_a(password_info):
 
 
 def solve_a(password_infos):
-    count = 0
-    for _ in filter(is_valid_a, password_infos):
-        count += 1
-    return count
+    return len(list(filter(is_valid_a, password_infos)))
 
 
 def is_valid_b(password_info):
     i, j, target, password = password_info
 
     def is_match(index, target, password):
-
         return password[index - 1] == target
     return is_match(i, target, password) != is_match(j, target, password)
 
 
 def solve_b(password_infos):
-    count = 0
-    for _ in filter(is_valid_b, password_infos):
-        count += 1
-    return count
+    return len(list(filter(is_valid_b, password_infos)))
 
 
 if __name__ == "__main__":
