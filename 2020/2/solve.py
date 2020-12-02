@@ -3,6 +3,7 @@ from aocd.models import Puzzle
 
 
 def parse(input):
+
     def parse_line(line):
         nums, target, password = line.split(' ')
         i, j = nums.split('-')
