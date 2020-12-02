@@ -18,7 +18,7 @@ def is_valid_a(password_info):
 
 
 def solve_a(password_infos):
-    return len(list(filter(is_valid_a, password_infos)))
+    return sum(map(is_valid_a, password_infos))
 
 
 def is_valid_b(password_info):
@@ -30,7 +30,7 @@ def is_valid_b(password_info):
 
 
 def solve_b(password_infos):
-    return len(list(filter(is_valid_b, password_infos)))
+    return sum(map(is_valid_b, password_infos))
 
 
 if __name__ == "__main__":
