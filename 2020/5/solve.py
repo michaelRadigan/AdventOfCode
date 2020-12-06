@@ -15,8 +15,8 @@ if __name__ == "__main__":
 
     # Apologies for the plaintext/plane pun, I couldn't resist
     # Note that row*8+5 is done for us implicitly
-    plain_allocations = list(map(lambda line: int(
-        line.translate(mappings), 2), cipher_allocations))
+    plain_allocations = list(map(
+        lambda line: int(line.translate(mappings), 2), cipher_allocations))
 
     min_allocation = min(plain_allocations)
     max_allocation = max(plain_allocations)
