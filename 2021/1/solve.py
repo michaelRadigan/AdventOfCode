@@ -3,7 +3,7 @@ from aocd.models import Puzzle
 
 
 def count_increases(pairs):
-    return sum([next > current for current, next in pairs])
+    return sum(next > current for current, next in pairs)
 
 
 def solve_a(entries):
