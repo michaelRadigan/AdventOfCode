@@ -2,14 +2,16 @@ import collections
 from aocd.models import Puzzle
 
 
+def count_increases(pairs):
+    return sum([next > current for current, next in pairs])
+
+
 def solve_a(entries):
-    return sum([next > current for current, next in zip(entries, entries[1:])])
+    return count_increases(zip(entries, entries[1:]))
 
 
 def solve_b(entries):
-    summed_windows = [sum(window)
-                      for window in zip(entries, entries[1:], entries[2:])]
-    return solve_a(summed_windows)
+    return count_increases(zip(entries, entries[3:]))
 
 
 if __name__ == "__main__":
