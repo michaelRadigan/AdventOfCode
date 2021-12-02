@@ -38,15 +38,13 @@ def solve_b(pairs):
 
 if __name__ == "__main__":
     puzzle = Puzzle(year=2021, day=2)
-    entries = list(map(lambda pair: (pair[0], int(pair[1])), map(
+    pairs = list(map(lambda pair: (pair[0], int(pair[1])), map(
         lambda x: x.split(), puzzle.input_data.split('\n'))))
 
-    print(f"{entries=}")
-
-    solution_a = solve_a(entries)
+    solution_a = solve_a(pairs)
     print(f"Part A: {solution_a}")
     puzzle.answer_a = solution_a
 
-    solution_b = solve_b(entries)
+    solution_b = solve_b(pairs)
     print(f"Part B: {solution_b}")
     puzzle.answer_b = solution_b
