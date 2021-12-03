@@ -7,8 +7,10 @@
 
   <ItemGroup>
     <Compile Include="One.fs" />
+    <Compile Include="Two.fs" />
     <Compile Include="Program.fs" />
     <Content Include="Inputs\1.in" />
+    <Content Include="Inputs\2.in" />
   </ItemGroup>
 
 </Project>
