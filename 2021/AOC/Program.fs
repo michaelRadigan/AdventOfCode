@@ -6,17 +6,17 @@ open System.Reflection
 
 [<EntryPoint>]
 let main _ =
-    let day = 2
+    let day = 3
 
     // This is to get up from the exe directory    
     let projectName = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName
     let path = Path.Combine(projectName, "Inputs", $"{day}.in");
     let lines = File.ReadAllLines(path);
     
-    let solutionA = AOC.Two.solveA lines
+    let solutionA = AOC.Three.solveA lines
     printfn $"solutionA: {solutionA}"
     
-    let solutionB = AOC.Two.solveB lines
-    printfn $"solutionB: {solutionB}"
+    // let solutionB = AOC.Two.solveB lines
+    // printfn $"solutionB: {solutionB}"
 
     0
