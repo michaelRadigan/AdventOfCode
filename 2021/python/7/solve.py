@@ -14,22 +14,13 @@ def solve_a(lines):
 
 
 def solve_b(lines):
-    # The mean point can be between two squares, so check both and grab the min
     mean_point = mean(lines)
 
     def cost(square):
         return int(sum(map(lambda h: triangular(abs(h - square)), lines)))
+
+    # The mean point can be between two squares, so check both and grab the min
     return min(cost(floor(mean_point)), cost(ceil(mean_point)))
-
-
-# def solve_b(lines):
-#     minimum = min(lines)
-#     maximum = max(lines)
-#     min_fuel = 999999999
-#     for i in range(minimum, maximum+1):
-#         fuel = int(sum(map(lambda h: triangular(abs(h - i)), lines)))
-#         min_fuel = min(min_fuel, fuel)
-#     return min_fuel
 
 
 if __name__ == "__main__":
