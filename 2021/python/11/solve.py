@@ -6,6 +6,7 @@ adjecencies = [(-1, 1), (0, 1), (1, 1), (-1, 0),
                (1, 0), (-1, -1), (0, -1), (1, -1)]
 
 
+# TODO: There's a lot of repitition here!
 def solve_a(grid):
     flashes = 0
     for i in range(100):
