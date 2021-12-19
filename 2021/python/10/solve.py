@@ -42,7 +42,7 @@ def solve_a(lines):
     return error_score
 
 
-# Todo: There's a fair bit of repitition here that I should probably clean up!
+# Todo: There's a fair bit of repitition here that I should probably
 def calculate_correction_score(line):
     stack = []
     for c in line:
@@ -69,6 +69,7 @@ def solve_b(lines):
 
 
 if __name__ == "__main__":
+    puzzle = Puzzle(year=2021, day=10)
     lines = puzzle.input_data.split('\n')
 
     solution_a = solve_a(lines)
