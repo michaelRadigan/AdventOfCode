@@ -79,5 +79,5 @@ if __name__ == "__main__":
     puzzle.answer_a = solution_a
 
     solution_b = solve_b(input)
-    print(f"Part B: {solution_b}")
+    print(f"{solution_b=}")
     puzzle.answer_b = solution_b
