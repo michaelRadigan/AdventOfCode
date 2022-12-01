@@ -1,6 +1,6 @@
 use itertools::Itertools;
 
-pub fn part1(input: &str) -> u32 {
+fn sum_elves(input: &str) -> impl Iterator<Item = u32> + '_ {
     input
     .split("\n\n")
     .map(|elf| {
@@ -9,23 +9,17 @@ pub fn part1(input: &str) -> u32 {
         .map(|line| line.parse::<u32>().unwrap_or(0))
         .sum::<u32>()
     })
-    //.collect::<Vec<u32>>()
     .into_iter()
+}
+
+pub fn part1(input: &str) -> u32 {
+    sum_elves(input)
     .max()
     .unwrap()
 }
 
 pub fn part2(input: &str) -> u32 {
-    input
-    .split("\n\n")
-    .map(|elf| {
-        elf
-        .lines()
-        .map(|line| line.parse::<u32>().unwrap_or(0))
-        .sum::<u32>()
-    })
-    //.collect::<Vec<u32>>()
-    .into_iter()
+    sum_elves(input)
     .sorted()
     .rev()
     .take(3)
