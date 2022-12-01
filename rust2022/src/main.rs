@@ -2,9 +2,10 @@ use std::fs::File;
 use std::{env, fs};
 use reqwest::blocking::Client;
 use reqwest::StatusCode;
-use rust2022::day1_2021;
 use std::path::Path;
 use std::io::Write;
+use rust2022::day1;
+
 
 // For now, going to write everything in main and maybe get a bit messy!
 
@@ -63,7 +64,7 @@ fn main() {
     };
 
     let input = fs::read_to_string(filepath).unwrap();
-    //println!("{}", input);
+    println!("{}", input);
 
     let part_one_solution = day1::part1(&input);
     println!("Part 1: {}", part_one_solution);
