@@ -9,7 +9,6 @@ fn sum_elves(input: &str) -> impl Iterator<Item = u32> + '_ {
         .map(|line| line.parse::<u32>().unwrap_or(0))
         .sum::<u32>()
     })
-    .into_iter()
 }
 
 pub fn part1(input: &str) -> u32 {
