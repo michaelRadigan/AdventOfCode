@@ -1,35 +1,33 @@
+use itertools::Itertools;
+
 pub fn part1(input: &str) -> u32 {
-    let lines = input.lines();
-
-    let mut max : u32 = 0;
-    let mut sum = 0;
-
-    for line in lines {
-        if line.is_empty() {
-            max = std::cmp::max(sum, max);
-            sum = 0;
-        } else {
-            sum += line.parse::<u32>().expect("Could not parse as int");
-        }
-    };
-    max    
+    *input
+    .split("\n\n")
+    .map(|elf| {
+        elf
+        .lines()
+        .map(|line| line.parse::<u32>().unwrap_or(0))
+        .sum()
+    })
+    .collect::<Vec<u32>>()
+    .iter()
+    .max()
+    .unwrap()
 }
 
 pub fn part2(input: &str) -> u32 {
-    let lines = input.lines();
-
-    let mut calories = Vec::new();
-    let mut sum = 0;
-
-    for line in lines {
-        if line.is_empty() {
-            calories.push(sum);
-            sum = 0;
-        } else {
-            sum += line.parse::<u32>().expect("Could not parse as int");
-        }
-    };
-    calories.sort();
-    calories.reverse();
-    calories[0]+calories[1]+calories[2]
+    input
+    .split("\n\n")
+    .map(|elf| {
+        elf
+        .lines()
+        .map(|line| line.parse::<u32>().unwrap_or(0))
+        .sum()
+    })
+    .collect::<Vec<u32>>()
+    .iter()
+    .sorted()
+    .rev()
+    .take(3)
+    .sum::<u32>()
 }
