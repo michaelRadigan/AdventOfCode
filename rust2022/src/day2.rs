@@ -39,19 +39,13 @@ impl FromStr for Res {
     }
 }
 
-
 fn remainder(x: isize, y: isize) -> isize {
     let rem = x % y;
     if rem < 0 {rem + y} else {rem}
 }
 
 fn score_1(opponent: Selection, me: Selection) -> isize {
-    let match_score = match  remainder((me as isize) - (opponent as isize), 3) {
-        0 => 3,
-        1 => 6,
-        2 => 0,
-        a => unimplemented!("not possible! a: {:?}, me: {:?}, opponent: {:?}", a, me, opponent)
-    };
+    let match_score = remainder((me as isize) - (opponent as isize) + 1, 3) * 3;
     let selection_score = (me as isize) + 1;
     match_score + selection_score
 }
