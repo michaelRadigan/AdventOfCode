@@ -5,6 +5,7 @@ use reqwest::StatusCode;
 use std::path::Path;
 use std::io::Write;
 use rust2022::day1;
+use rust2022::day2;
 
 
 // For now, going to write everything in main and maybe get a bit messy!
@@ -50,7 +51,7 @@ fn get_input(year: usize, day: usize) -> String {
 
 fn main() {
     let year = 2022;
-    let day = 1;
+    let day = 2;
 
     let filename = filename(year, day);
     let filepath = Path::new(&filename);
@@ -66,9 +67,9 @@ fn main() {
     let input = fs::read_to_string(filepath).unwrap();
     println!("{}", input);
 
-    let part_one_solution = day1::part1(&input);
+    let part_one_solution = day2::part1(&input);
     println!("Part 1: {}", part_one_solution);
     
-    let part_two_solution = day1::part2(&input);
+    let part_two_solution = day2::part2(&input);
     println!("Part 2: {}", part_two_solution)
 }
