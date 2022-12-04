@@ -1,4 +1,4 @@
-use std::{str::FromStr, fs::remove_dir};
+use std::{str::FromStr};
 
 #[derive(Debug, PartialEq, Copy, Clone)]
 enum Selection {
