@@ -9,7 +9,7 @@ use rust2022::day2;
 use rust2022::day3;
 use rust2022::day4;
 use rust2022::day5;
-
+use rust2022::day6;
 
 // For now, going to write everything in main and maybe get a bit messy!
 
@@ -54,7 +54,7 @@ fn get_input(year: usize, day: usize) -> String {
 
 fn main() {
     let year = 2022;
-    let day = 5;
+    let day = 6;
 
     let filename = filename(year, day);
     let filepath = Path::new(&filename);
@@ -70,9 +70,9 @@ fn main() {
     let input = fs::read_to_string(filepath).unwrap();
     println!("{}", input);
 
-    let part_one_solution = day5::part1(&input);
+    let part_one_solution = day6::part1(&input);
     println!("Part 1: {}", part_one_solution);
     
-    let part_two_solution = day5::part2(&input);
+    let part_two_solution = day6::part2(&input);
     println!("Part 2: {}", part_two_solution)
 }
