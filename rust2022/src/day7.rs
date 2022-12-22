@@ -44,7 +44,6 @@ fn parse_directory(lines :  &mut impl Iterator<Item = Line>) -> Vec<usize> {
     sub_dirs
 }
 
-
 pub fn part1(input: &str) -> usize {
     let mut lines = input.lines().map(|line| Line::from_str(line).unwrap());
     parse_directory(&mut lines).into_iter().filter(|x| x <= &100_000).sum()
