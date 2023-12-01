@@ -1,7 +1,5 @@
 from aocd import get_data
 
-data = get_data(day=1, year=2023)
-
 lookup = {
     "one" : "one1one",
     "two" : "two2two",
@@ -31,5 +29,6 @@ def part_two(data):
     return part_one(hacky_translate(data))
 
 if __name__ == "__main__":
+    data = get_data(day=1, year=2023)
     print(f"{part_one(data)=}")
     print(f"{part_two(data)=}")
