@@ -22,18 +22,14 @@ def hacky_translate(data):
 def get_digits(line):
     return ''.join(d for d in line if d.isdigit())
 
-def part_one(lines):
+def part_one(data):
+    lines = data.split("\n")
     digits = [get_digits(line) for line in lines]
     return sum([int(d[0] + d[-1]) for d in digits])
-        
+    
 def part_two(data):
-    return part_one(hacky_translate(data).split("\n"))
-
+    return part_one(hacky_translate(data))
 
 if __name__ == "__main__":
-    lines = data.split("\n")
-    print(f"{part_one(lines)=}")
+    print(f"{part_one(data)=}")
     print(f"{part_two(data)=}")
-
-
-
