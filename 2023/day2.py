@@ -23,7 +23,7 @@ def part_one(data: str):
             sum += int(game_id)
     return sum
 
-def part_two(data):
+def part_two(data: str):
     lines = data.split("\n")
     sum = 0
     for line in lines:
